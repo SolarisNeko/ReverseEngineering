@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+
+
+
+<configuration >
+    <!-- 读取 db.properties -->
+    <properties resource="db.properties"></properties>
+
+    <typeAliases>
+        <package name="com.kusonl.mapper"></package>
+    </typeAliases>
+
+    <!-- 配置环境 -->
+    <environments default="dev">
+
+        <environment id="dev">
+            <transactionManager type="JDBC"></transactionManager>
+
+            <dataSource type="POOLED">
+                <property name="driver" value="${mydriver}"></property>
+                <property name="url" value="${myurl}"></property>
+                <property name="username" value="${myusername}"></property>
+                <property name="password" value="${mypassword}"></property>
+            </dataSource>
+        </environment>
+
+
+        <environment id="test1">
+            <transactionManager type="JDBC"></transactionManager>
+
+            <dataSource type="POOLED">
+                <property name="driver" value="com.mysql.jdbc.Driver"></property>
+                <property name="url" value="jdbc:mysql://localhost:3306/mybatis_demo"></property>
+                <property name="username" value="root"></property>
+                <property name="password" value="root"></property>
+            </dataSource>
+        </environment>
+    </environments>
+
+
+    <!-- 将 UserMapper.xml 和 mybatis-config.xml(主配置文件) 进行关联 -->
+    <mappers>
+        <mapper resource="com/kusonl/mapper/UserMapper.xml"></mapper>
+    </mappers>
+
+</configuration>
