@@ -9,6 +9,16 @@ public class User {
 
     private String address;
 
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                ", address='" + address + '\'' +
+                '}';
+    }
+
     public Integer getId() {
         return id;
     }
@@ -39,15 +49,5 @@ public class User {
 
     public void setAddress(String address) {
         this.address = address == null ? null : address.trim();
-    }
-
-    @Override
-    public String toString() {
-        return "User{" +
-                "id=" + id +
-                ", username='" + username + '\'' +
-                ", password='" + password + '\'' +
-                ", address='" + address + '\'' +
-                '}';
     }
 }

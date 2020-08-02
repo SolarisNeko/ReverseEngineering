@@ -12,6 +12,7 @@ import java.util.List;
 
 public class DemoTest {
 
+    // 按PK搜索
     @Test
     public void fun1() {
         SqlSession session = MyBatisTools.getSession();
@@ -29,6 +30,7 @@ public class DemoTest {
     }
 
 
+    // 模糊查询、绝对查询
     @Test
     public void fun2() {
         SqlSession session = MyBatisTools.getSession();
